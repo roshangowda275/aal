@@ -87,3 +87,14 @@ int main() {
 
     return 0;
 }
+
+
+output
+Enter the number of elements (up to 1000): 10
+Array elements before sorting:
+34 5 23 99 47 12 15 56 77 5 
+Array elements after sorting:
+5 5 12 15 23 34 47 56 77 99 
+Random key to search for: 23
+Element 23 is found at index 4.
+Time Taken in seconds: 0.000005
