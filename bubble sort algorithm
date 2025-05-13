@@ -52,3 +52,13 @@ int main() {
 
     return 0;
 }
+output
+Enter the number of elements in the array: 10
+array before bubble sort:
+23 45 67 12 89 34 56 78 99 2 
+
+array after bubble sort:
+2 12 23 34 45 56 67 78 89 99 
+
+Count: 34
+Time taken for bubble sort: 0.000050 seconds
