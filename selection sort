@@ -39,3 +39,13 @@ int main() {
 
     return 0;
 }
+
+#output
+Enter the number of elements: 6
+Enter the elements: 64 25 12 22 11 50
+After iteration 1: 11 25 12 22 64 50 
+After iteration 2: 11 12 25 22 64 50 
+After iteration 3: 11 12 22 25 64 50 
+After iteration 4: 11 12 22 25 50 64 
+After iteration 5: 11 12 22 25 50 64 
+Sorted array: 11 12 22 25 50 64 
