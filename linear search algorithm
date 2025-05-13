@@ -48,3 +48,10 @@ int main() {
     }
 
     printf("Time Taken for search in seconds: %f\n", time_taken);
+#output
+Enter the number of elements (up to 1000): 10
+Array elements:
+12 34 56 12 45 67 89 23 56 12 
+Random key to search for: 12
+Element 12 is found 3 times.
+Time Taken for search in seconds: 0.000001
