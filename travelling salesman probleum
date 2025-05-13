@@ -57,3 +57,20 @@ int main() {
     printf("Minimum cost of visiting all cities: %d\n", minCost);
     return 0;
 }
+#output
+Starting TSP from city 0
+Visiting city 1 from city 0 (Current cost: 10)
+Visiting city 2 from city 1 (Current cost: 45)
+Visiting city 3 from city 2 (Current cost: 75)
+Completed path: 0 -> 1 -> 2 -> 3 -> 0 (Cost: 95)
+Visiting city 3 from city 1 (Current cost: 35)
+Visiting city 2 from city 3 (Current cost: 65)
+Completed path: 0 -> 1 -> 3 -> 2 -> 0 (Cost: 95)
+Visiting city 2 from city 0 (Current cost: 15)
+Visiting city 1 from city 2 (Current cost: 50)
+Visiting city 3 from city 1 (Current cost: 75)
+Completed path: 0 -> 2 -> 1 -> 3 -> 0 (Cost: 95)
+Visiting city 3 from city 2 (Current cost: 45)
+Visiting city 1 from city 3 (Current cost: 70)
+Completed path: 0 -> 2 -> 3 -> 1 -> 0 (Cost: 95)
+Minimum cost of visiting all cities: 95
