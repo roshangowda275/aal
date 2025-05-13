@@ -1,0 +1,110 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+#define V 5  
+#define E 7 
+
+struct Edge {
+    int src, dest, weight;
+};
+
+struct Subset {
+    int parent;
+    int rank;
+};
+
+int find(struct Subset subsets[], int i) {
+    if (subsets[i].parent != i) {
+        subsets[i].parent = find(subsets, subsets[i].parent);
+    }
+    return subsets[i].parent;
+}
+
+void Union(struct Subset subsets[], int x, int y) {
+    int xroot = find(subsets, x);
+    int yroot = find(subsets, y);
+
+    if (subsets[xroot].rank < subsets[yroot].rank) {
+        subsets[xroot].parent = yroot;
+    } else if (subsets[xroot].rank > subsets[yroot].rank) {
+        subsets[yroot].parent = xroot;
+    } else {
+        subsets[yroot].parent = xroot;
+        subsets[xroot].rank++;
+    }
+}
+
+
+int compareEdges(const void* a, const void* b) {
+    return ((struct Edge*)a)->weight - ((struct Edge*)b)->weight;
+}
+
+void kruskalMST(struct Edge edges[], int graph[V][V]) {
+    struct Edge result[V];  
+    int e = 0; 
+    int i = 0;  
+
+    qsort(edges, E, sizeof(edges[0]), compareEdges);
+
+    struct Subset *subsets = (struct Subset*)malloc(V * sizeof(struct Subset));
+    for (int v = 0; v < V; v++) {
+        subsets[v].parent = v;
+        subsets[v].rank = 0;
+    }
+
+    while (e < V - 1) {
+        struct Edge next_edge = edges[i++];
+
+        int x = find(subsets, next_edge.src);
+        int y = find(subsets, next_edge.dest);
+
+        if (x != y) {
+            result[e++] = next_edge;
+            Union(subsets, x, y);
+        }
+    }
+
+    printf("\nMinimum Spanning Tree (MST) Edges:\n");
+    printf("Edge \tWeight\n");
+    for (int i = 0; i < e; i++) {
+        printf("%c - %c \t%d\n", result[i].src + 'A', result[i].dest + 'A', result[i].weight);
+    }
+
+    printf("\nGraphical Representation of MST:\n");
+    printf("\n       2\n");
+    printf("   A -------- B\n");
+
+    if (result[0].src == 0 && result[0].dest == 1) {
+        printf("   | \n  3| \n   | \n");
+    }
+
+    if (result[1].src == 0 && result[1].dest == 3) {
+        printf("   D -------- C\n");
+    }
+
+    if (result[2].src == 3 && result[2].dest == 4) {
+        printf("       5     |\n");
+        printf("              |\n");
+        printf("              E\n");
+    }
+
+    if (result[3].src == 3 && result[3].dest == 2) {
+        printf("       4     |\n");
+    }
+}
+
+int main() {
+    struct Edge edges[] = {
+        {0, 1, 2}, 
+        {0, 3, 3},  
+        {3, 2, 4}, 
+        {3, 4, 5},  
+        {1, 2, 7}, 
+        {1, 4, 0},  
+        {2, 4, 6}   
+    };
+
+    kruskalMST(edges, NULL);  
+
+    return 0;
+}
