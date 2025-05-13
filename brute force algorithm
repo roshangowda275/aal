@@ -27,3 +27,16 @@ int main() {
 
     return 0;
 }
+For the given input string:
+
+c
+Copy
+Edit
+char input_str[] = "nobody_notice_him"; 
+char pattern[] = "him";
+
+Output:
+text
+Copy
+Edit
+Pattern 'him' found in the input string.
