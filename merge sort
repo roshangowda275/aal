@@ -64,3 +64,36 @@ int main() {
 
     return 0;
 }
+#output
+Array before sorting:
+10 14 19 26 27 31 33 35 42 44 0 
+
+Dividing the array into left part [low..mid] and right part [mid+1..high]
+
+Dividing the array into left part [low..mid] and right part [mid+1..high]
+
+Dividing the array into left part [low..mid] and right part [mid+1..high]
+
+Dividing the array into left part [low..mid] and right part [mid+1..high]
+
+Dividing the array into left part [low..mid] and right part [mid+1..high]
+
+Dividing the array into left part [low..mid] and right part [mid+1..high]
+
+Dividing the array into left part [low..mid] and right part [mid+1..high]
+
+Array after merging [0..1]: 10 14 19 26 27 31 33 35 42 44 0 
+Array after merging [2..3]: 10 14 19 26 27 31 33 35 42 44 0 
+Array after merging [4..5]: 10 14 19 26 27 31 33 35 42 44 0 
+Array after merging [6..7]: 10 14 19 26 27 31 33 35 42 44 0 
+Array after merging [8..9]: 10 14 19 26 27 31 33 35 42 44 0 
+Array after merging [0..2]: 10 14 19 26 27 31 33 35 42 44 0 
+Array after merging [3..5]: 10 14 19 26 27 31 33 35 42 44 0 
+Array after merging [6..8]: 10 14 19 26 27 31 33 35 42 44 0 
+Array after merging [9..10]: 10 14 19 26 27 31 33 35 42 44 0 
+
+Array after merging [0..5]: 10 14 19 26 27 31 33 35 42 44 0 
+Array after merging [6..10]: 10 14 19 26 27 31 33 35 42 44 0 
+
+Array after sorting:
+0 10 14 19 26 27 31 33 35 42 44 
